@@ -1,0 +1,27 @@
+# Node / common
+node_modules/
+dist/
+.DS_Store
+.vscode/
+
+# Mac
+*.DS_Store
+
+# Windows
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor
+*.sublime-workspace
+*.sublime-project
+.idea/
+
+# Powershell history
+ConsoleHost_history.txt
+
+# Build artifacts
+build/

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LinkedIn Typing Assistant</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <header class="header">
+        <div>
+          <p class="eyebrow">LinkedIn</p>
+          <h1>Typing Assistant</h1>
+        </div>
+        <span class="status-dot" id="statusDot" aria-hidden="true"></span>
+      </header>
+
+      <label class="label">Texto formatado</label>
+
+      <div class="toolbar" role="toolbar" aria-label="Ferramentas de formatação">
+        <button class="tool-button" type="button" data-command="bold"><strong>B</strong></button>
+        <button class="tool-button" type="button" data-command="italic"><em>I</em></button>
+        <button class="tool-button" type="button" data-command="underline"><u>U</u></button>
+        <button class="tool-button" type="button" data-command="insertUnorderedList">• Lista</button>
+        <button class="tool-button" type="button" data-command="removeFormat">Limpar</button>
+      </div>
+
+      <div
+        id="messageEditor"
+        class="editor"
+        contenteditable="true"
+        role="textbox"
+        aria-label="Campo de texto formatado"
+        data-placeholder="Cole aqui o texto da publicação"
+        spellcheck="true"
+      ></div>
+
+      <p class="hint" id="hint">Abra o compositor do LinkedIn e clique em Iniciar.</p>
+
+      <div class="actions">
+        <button id="startButton" class="button button-primary" type="button">Iniciar</button>
+        <button id="stopButton" class="button button-secondary" type="button">Parar</button>
+      </div>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

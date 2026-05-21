@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Typing Assistant",
+  "version": "1.0.0",
+  "description": "Abre um modal simples para colar texto e digita no compositor do LinkedIn com ritmo natural.",
+  "action": {
+    "default_title": "LinkedIn Typing Assistant",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["tabs", "scripting"],
+  "host_permissions": ["*://*.linkedin.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["*://*.linkedin.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
