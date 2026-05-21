@@ -1,37 +1,52 @@
+
 # LinkedIn Typing Assistant
 
-Extensão Chrome (Manifest V3) que abre um editor minimalista para colar/formatar texto e digita o conteúdo no compositor do LinkedIn simulando digitação humana (caractere a caractere).
+Extensão para Google Chrome (Manifest V3) projetada para automatizar a digitação de publicações no LinkedIn de forma natural e com preservação básica de formatação.
 
-Arquivos incluídos:
+Visão geral
+-----------
+Esta extensão permite colar ou editar texto em um editor minimalista (rich-text) e reproduzi-lo no compositor de posts do LinkedIn caractere a caractere, simulando comportamento humano (velocidade variável, pausas entre palavras e frases). A extensão tenta preservar formatação básica como negrito, itálico, sublinhado, listas e quebras de linha.
 
-- `manifest.json`
-- `popup.html`
-- `popup.js`
-- `content.js`
-- `style.css`
-- `init_and_push.ps1` (script de auxílio para inicializar repositório e enviar ao GitHub)
-- `LICENSE`
+Principais recursos
+-------------------
+- Editor rich-text com ferramentas básicas de formatação.
+- Colagem que preserva HTML básico ou converte texto simples em parágrafos.
+- Simulação de digitação humana (eventos de teclado e input reais).
+- Botões para iniciar e interromper a digitação.
+- Restrita ao domínio `linkedin.com` (especificado em `manifest.json`).
 
-Como subir este projeto para o seu GitHub (passos recomendados):
+Estrutura do projeto
+--------------------
+- `manifest.json` — Manifest V3 da extensão.
+- `popup.html`, `popup.js`, `style.css` — interface da popup e comportamento do editor.
+- `content.js` — busca o compositor do LinkedIn, injeta eventos reais de teclado/input e controla a digitação simulada.
+- `init_and_push.ps1` — script auxiliar (opcional) para inicializar o repositório local e enviar ao GitHub.
+- `LICENSE` — licença MIT.
 
-1. Abra um terminal PowerShell na pasta do projeto (`c:\Users\Home\Documents\ANMT`).
-2. (Opcional) Revise os arquivos e faça alterações.
-3. Execute o script de inicialização e push abaixo e siga as instruções interativas para informar a URL do repositório remoto (ex.: `https://github.com/SEU_USUARIO/REPO.git`).
+Instalação (modo desenvolvedor)
+------------------------------
+1. Abra o Chrome e acesse `chrome://extensions/`.
+2. Ative "Developer mode".
+3. Clique em "Load unpacked" e selecione a pasta deste projeto.
+4. Abra o LinkedIn, abra a extensão, cole/edite o texto e clique em "Iniciar".
 
-   ```powershell
-   .\init_and_push.ps1
-   ```
+Desenvolvimento e depuração
+---------------------------
+- Recarregue a extensão em `chrome://extensions/` após mudanças.
+- Para depurar o `content.js`, abra as DevTools na aba do LinkedIn (F12) e observe mensagens, listeners e eventos disparados.
 
-Alternativa com `gh` (GitHub CLI) se você estiver autenticado:
 
-```powershell
-# cria repositório público com o nome 'anmt-linkedin-typing' e envia a branch main
-gh repo create anmt-linkedin-typing --public --source=. --remote=origin --push
-```
 
-Notas de segurança e uso:
+Licença
+-------
+MIT — ver `LICENSE`.
 
-- A extensão foi projetada para funcionar apenas em `linkedin.com`.
-- A extensão simula digitação real; use com responsabilidade e dentro das políticas do LinkedIn.
+Aviso de uso
+------------
+Esta ferramenta executa automação que interage com a interface do LinkedIn. Utilize-a com responsabilidade, respeitando os Termos de Serviço do LinkedIn e a legislação aplicável.
+
+Contato
+-------
+Abra uma issue no repositório ou envie mensagens via GitHub.
 
 ---
